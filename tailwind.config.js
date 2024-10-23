@@ -11,6 +11,11 @@ module.exports = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        lexend: ["var(--font-lexend-deca)", "sans-serif"],
+        oregano: ["var(--font-oregano)"],
+        livvic: ["var(--font-livvic)"],
+      },
     },
   },
   plugins: [],
