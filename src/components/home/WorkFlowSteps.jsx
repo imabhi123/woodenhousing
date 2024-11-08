@@ -65,7 +65,7 @@ const WorkflowSteps = () => {
           <div className="text-start relative z-10 mt-12">
             <h3 className="font-semibold text-[20px] mb-2">3. Explore Design Options</h3>
             <p className="text-gray-600 text-[15px] max-w-[450px]">
-              We'll present you with various design options and reference images
+              We&apos;ll present you with various design options and reference images
               to help you choose the style and layout that best suits your
               needs.
             </p>

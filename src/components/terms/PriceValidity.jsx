@@ -16,7 +16,7 @@ const PriceValidity = () => {
             </li>
             
             <li className="text-justify">
-              Based on Customer's initial discussion with the HomeLane representatives, Customer shall make an initial payment of either 5% of quote value or ₹NR 25,000, 
+              Based on Customer&apos;s initial discussion with the HomeLane representatives, Customer shall make an initial payment of either 5% of quote value or ₹NR 25,000, 
               whichever is higher, for booking the order with HomeLane, subject to terms and conditions mentioned herein, if applicable.
             </li>
             
@@ -60,7 +60,7 @@ const PriceValidity = () => {
             
             <li className="text-justify">
               Between First Installment and Third Installment payment stage of Customer order brand partnered categories such as appliances, lights and loose furniture etc. are 
-              subject to price fluctuation and may not be available due to stock issues from the manufacturer's end. In such cases, the Customer will have an option to choose the 
+              subject to price fluctuation and may not be available due to stock issues from the manufacturer&apos;s end. In such cases, the Customer will have an option to choose the 
               other available products.
             </li>
             

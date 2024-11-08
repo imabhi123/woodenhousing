@@ -68,8 +68,8 @@ const ThermalConductivityChart = () => {
 
             <div>
               <p className="text-gray-800 italic">
-                "Thermal conductivity: is the ability of a material to conduct
-                heat"
+              &quotThermal conductivity: is the ability of a material to conduct
+                heat&quot
               </p>
             </div>
 
