@@ -81,7 +81,7 @@ const PriceValidity = () => {
             </li>
             
             <li className="text-justify">
-              If the fourth installment (i.e. the final 50 % of the estimate) is not paid by the Customer within the time stipulated in the "Ready to dispatch" email sent to the 
+              If the fourth installment (i.e. the final 50 % of the estimate) is not paid by the Customer within the time stipulated in the &quot;Ready to dispatch&quot; email sent to the 
               Customer, then the Customer shall be liable to pay a demurrage charge of INR 500 per day, from the second day that the instalment becomes due till such time that 
               the same is paid in full.
             </li>
