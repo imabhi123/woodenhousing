@@ -8,11 +8,11 @@ import img4 from "../../assets/images/3d4.png";
 import maximize from "@/assets/images/maximize.png";
 import threedi from "@/assets/images/3d_vec.png";
 import Image from "next/image";
-// import Image3DViewer from "../Image3DViewer";
+import Image3DViewer from "../Image3DViewer";
 
 const HouseViewer = ({ item }) => {
   const [currentSlide, setCurrentSlide] = useState(1);
-  console.log(item?.gallery3d);
+  console.log(item?.models3d);
 
   const houses = [
     { id: 1, imageUrl: img1, style: "Modern white" },
@@ -39,15 +39,15 @@ const HouseViewer = ({ item }) => {
       </h2>
 
       <div className="relative mb-8 mx-[15%] bg-white rounded-lg shadow-lg overflow-hidden">
-        {/* <Image3DViewer /> */}
-        <div className="relative py-12 px-[20%] bg-white">
-          <Image
+        <div className="relative  bg-white">
+          {/* <Image
             height={500}
             width={500}
             src={item?.gallery3d[currentSlide - 1]}
             alt="3D House View"
             className="w-full object-cover rounded-lg transition-transform duration-500 ease-in-out transform scale-105 hover:scale-110"
-          /> 
+          />  */}
+          <Image3DViewer url={item?.models3d[0]} poster={item?.projectDetails?.floors[0].floorElevation} environmentImage={item?.projectDetails?.floors[0].floorElevation} />
           {/* 3D rotation indicator */}
           <div className="absolute bottom-4 left-4 flex items-center gap-1 text-sm text-gray-600">
             <div className=" flex items-center justify-center  rounded-full bg-white">

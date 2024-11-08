@@ -91,23 +91,24 @@ const PropertyDetails = ({ item }) => {
             className="w-full rounded-xl object-cover"
           />
 
-          <button
+          {currentImage!==0&&<button
             onClick={prevImage}
             className="absolute left-[-20px] z-[100] shadow-lg top-1/2 -translate-y-1/2 bg-white p-2 rounded-full"
           >
             <ChevronLeft className="w-6 text-black h-6" />
-          </button>
+          </button>}
 
-          <button
+          {currentImage!==item?.gallery.length-1&&<button
             onClick={nextImage}
             className="absolute right-[-20px] z-[100] shadow-lg top-1/2 -translate-y-1/2 bg-white p-2 rounded-full"
           >
             <ChevronRight className="w-6 text-black h-6" />
-          </button>
+          </button>}
         </div>
 
         {/* Thumbnails */}
-        <div className="flex gap-4 mt-4 w-full justify-center relative bottom-[70px] no_scroll overflow-x-auto">
+        <div className="w-full flex justify-center">
+        <div className="grid grid-cols-4 gap-4 px-6 mt-4 w-[98%]  relative bottom-[70px] no_scroll overflow-x-auto">
           {item?.gallery?.slice(0, 4).map((thumb, idx) => (
             <button
               key={idx}
@@ -134,6 +135,7 @@ const PropertyDetails = ({ item }) => {
             </button>
           ))}
         </div>
+        </div>
       </div>
 
       {/* Project Details Section */}
@@ -152,9 +154,9 @@ const PropertyDetails = ({ item }) => {
                     <div className="bg-[#F4EFF5] p-2 rounded-full">
                     {detail.icon}
                     </div>
-                    <span>{detail.label}</span>
+                    <span className="text-[#313131]">{detail.label}</span>
                   </div>
-                  <span className="font-medium text-[#573C63]">
+                  <span className="font-semibold text-[#000]">
                     {detail.value}
                   </span>
                 </div>

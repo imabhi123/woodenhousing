@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Search } from "lucide-react";
 import workflow from "../../assets/images/workflow.png";
 import Image from "next/image";
+import threeimg from '@/assets/images/03.png'
 
 const WorkflowSteps = () => {
   const steps = [
@@ -59,14 +60,16 @@ const WorkflowSteps = () => {
       <div className="flex flex-col items-center">
         <div className="flex flex-col items-center">
           <Image height={500} width={500} src={workflow} alt="" />
-
-          <div className="text-start mt-12">
+          <div className="flex items-center">
+          <p className="relative left-10 text-[160px] z-0 top-10 font-lexend text-[#F2F2F2]"><img src={threeimg.src} alt="" /></p>
+          <div className="text-start relative z-10 mt-12">
             <h3 className="font-semibold text-[20px] mb-2">3. Explore Design Options</h3>
             <p className="text-gray-600 text-[15px] max-w-[450px]">
               We'll present you with various design options and reference images
               to help you choose the style and layout that best suits your
               needs.
             </p>
+          </div>
           </div>
         </div>
       </div>
