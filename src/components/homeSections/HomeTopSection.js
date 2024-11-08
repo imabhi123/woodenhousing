@@ -8,7 +8,7 @@
 // const HomeTopSection = () => {
 //   return (
 //     <>
-//       <div className="container mx-auto flex gap-5 items-center max-w-[1200px] my-3">
+//       <div className="container mx-[15%] flex gap-5 items-center max-w-[1200px] my-3">
 //         <span className={`${"text-[#1E1E21] font-medium"}`}>
 //           Why wooden house?
 //         </span>
@@ -20,7 +20,7 @@
 //       <div
 //         className="w-full h-[400px] bg-cover bg-no-repeat relative items-center flex"
 //         style={{
-//           backgroundImage: `url(${img2.src})`,
+//           backgroundImage: `url(${img2.src||null})`,
 //           clipPath: "polygon(0 0, 100% 0, 100% 100%, 100% 100%, 0 90%)",
 //         }}
 //       >
@@ -70,21 +70,11 @@ import { IoIosArrowRoundForward } from "react-icons/io";
 const HomeTopSection = () => {
   return (
     <>
-      <div className="container mx-auto flex gap-4 items-center max-w-[1200px] my-3 px-4 md:px-0">
-        <span className="text-[#1E1E21] font-medium text-sm sm:text-base">
-          Why wooden house?
-        </span>
-        <span className="text-[#1E1E21] font-medium text-sm sm:text-base">
-          Our Projects
-        </span>
-        <span className="text-[#1E1E21] font-medium text-sm sm:text-base">
-          3D design tour
-        </span>
-      </div>
+      
       <div
         className="w-full h-[450px] sm:h-[400px] bg-cover bg-no-repeat relative items-center flex flex-col sm:flex-row  px-4 md:px-0 sm:clip-path"
         style={{
-          backgroundImage: `url(${img2.src})`,
+          backgroundImage: `url(${img2.src||null})`,
         }}
       >
         {/* Image hidden on mobile and shown on larger screens */}

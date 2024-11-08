@@ -69,7 +69,7 @@ const WoodenHousingFeatures = () => {
   const doubledFeatures = [...features, ...features, ...features];
 
   return (
-    <div className="max-w-full mx-auto px-4 py-3">
+    <div className="max-w-full mx-[15%] px-4 py-3">
       <div
         className="relative overflow-hidden"
         onMouseEnter={() => setIsPaused(true)}

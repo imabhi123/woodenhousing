@@ -33,10 +33,15 @@
 //     </html>
 //   );
 // }
-
 import localFont from "next/font/local";
 import "./globals.css";
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
+import './app.css'
 import { Oregano, Livvic } from "next/font/google";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 // Define the Geist Sans font
 const geistSans = localFont({
@@ -112,9 +117,23 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body
-        className={`${lexendDeca.variable} ${oregano.variable} ${livvic.variable} antialiased`}
+        className={`${lexendDeca.variable} ${oregano.variable} ${livvic.variable} antialiased bg-white overflow-x-hidden text-black`}
       >
+        <Header />
+        <div className="container mx-[15%] flex gap-4 items-center max-w-[1200px] my-3 px-4 md:px-0">
+          <span className="text-[#1E1E21] font-medium text-sm sm:text-base">
+            Why wooden house?
+          </span>
+          <span className="text-[#1E1E21] font-medium text-sm sm:text-base">
+            Our Projects
+          </span>
+          <span className="text-[#1E1E21] font-medium text-sm sm:text-base">
+            3D design tour
+          </span>
+        </div>
         {children}
+        <Footer />
+        <ToastContainer limit={1} />
       </body>
     </html>
   );

@@ -1,16 +1,18 @@
-"use client"; // Ensure this is a client component
+"use client";
 
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation"; // Import usePathname
+import { usePathname } from "next/navigation";
 import logo from "@/assets/svgimages/logo.png";
 import Image from "next/image";
+
 const Header = () => {
-  const pathname = usePathname(); // Get the current path to highlight the active tab
+  const pathname = usePathname();
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
 
   return (
-    <header className="bg-white border-b border-b-[#D9D9D9] p-4 font-lexend  ">
-      <div className="container mx-auto flex justify-between items-center max-w-[1200px]">
+    <header className="bg-white border-b border-b-[#D9D9D9] py-4 font-lexend">
+      <div className="w-full px-[15%] flex justify-between items-center">
         {/* Logo */}
         <Link href="/">
           <Image src={logo} alt="LOGO" className="h-full w-[200px]" />
@@ -21,7 +23,7 @@ const Header = () => {
           <Link href="/">
             <span
               className={`${
-                pathname === "/"
+                pathname === "/" || pathname === "/inner-page"
                   ? "text-[#1E1E21] underline underline-offset-8 decoration-[#D75438] decoration-[3px] font-medium"
                   : "text-[#1E1E21] hover:text-[#1E1E21]"
               }`}
@@ -40,17 +42,77 @@ const Header = () => {
               Designs
             </span>
           </Link>
-          <Link href="/services">
-            <span
-              className={`${
-                pathname === "/services"
-                  ? "text-[#1E1E21] underline underline-offset-8 decoration-[#D75438] decoration-[3px] font-medium"
-                  : "text-[#1E1E21] hover:text-[#1E1E21]"
-              }`}
-            >
-              Services
-            </span>
-          </Link>
+
+          {/* Services with Dropdown */}
+          <div
+            className="relative"
+            onMouseEnter={() => setIsServicesOpen(true)}
+            onMouseLeave={() => setIsServicesOpen(false)}
+          >
+            <Link href="/services">
+              <span
+                className={`${
+                  pathname === "/services"
+                    ? "text-[#1E1E21] underline underline-offset-8 decoration-[#D75438] decoration-[3px] font-medium"
+                    : "text-[#1E1E21] hover:text-[#1E1E21]"
+                } flex items-center gap-1`}
+              >
+                Services
+                <svg
+                  className={`w-4 h-4 transition-transform ${
+                    isServicesOpen ? "rotate-180" : ""
+                  }`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth={2}
+                    d="M19 9l-7 7-7-7"
+                  />
+                </svg>
+              </span>
+            </Link>
+
+            {/* Dropdown Menu */}
+            {isServicesOpen && (
+              <div className="absolute top-full left-0 mt-2 w-48 bg-white rounded-md shadow-lg py-2 z-50">
+                <Link href="/services/web-development">
+                  <span className="block px-4 py-2 text-sm text-[#1E1E21] hover:bg-gray-100">
+                    Wooden Cottages
+                  </span>
+                </Link>
+                <Link href="/services/app-development">
+                  <span className="block px-4 py-2 text-sm text-[#1E1E21] hover:bg-gray-100">
+                    Wooden Houses
+                  </span>
+                </Link>
+                <Link href="/services/ui-ux-design">
+                  <span className="block px-4 py-2 text-sm text-[#1E1E21] hover:bg-gray-100">
+                    Wooden Villa
+                  </span>
+                </Link>
+                <Link href="/services/digital-marketing">
+                  <span className="block px-4 py-2 text-sm text-[#1E1E21] hover:bg-gray-100">
+                    Wooden Pergola
+                  </span>
+                </Link>
+                <Link href="/services/digital-marketing">
+                  <span className="block px-4 py-2 text-sm text-[#1E1E21] hover:bg-gray-100">
+                    Wooden Gazebo
+                  </span>
+                </Link>
+                <Link href="/services/digital-marketing">
+                  <span className="block px-4 py-2 text-sm text-[#1E1E21] hover:bg-gray-100">
+                    Terrace Wooden House
+                  </span>
+                </Link>
+              </div>
+            )}
+          </div>
+
           <Link href="/about-us">
             <span
               className={`${
@@ -152,6 +214,27 @@ const Header = () => {
               Services
             </span>
           </Link>
+          {/* Mobile Services Dropdown Items */}
+          <Link href="/services/web-development">
+            <span className="block pl-4 text-sm text-[#1E1E21] hover:text-[#D75438]">
+              Web Development
+            </span>
+          </Link>
+          <Link href="/services/app-development">
+            <span className="block pl-4 text-sm text-[#1E1E21] hover:text-[#D75438]">
+              App Development
+            </span>
+          </Link>
+          <Link href="/services/ui-ux-design">
+            <span className="block pl-4 text-sm text-[#1E1E21] hover:text-[#D75438]">
+              UI/UX Design
+            </span>
+          </Link>
+          <Link href="/services/digital-marketing">
+            <span className="block pl-4 text-sm text-[#1E1E21] hover:text-[#D75438]">
+              Digital Marketing
+            </span>
+          </Link>
           <Link href="/about-us">
             <span
               className={`${
@@ -186,7 +269,7 @@ const Header = () => {
             </span>
           </Link>
           <Link href="/contact-us">
-            <span className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition cursor-pointer">
+            <span className="bg-[#D75438] text-white px-4 py-2 rounded hover:bg-[#D75430] transition cursor-pointer">
               Contact Us
             </span>
           </Link>

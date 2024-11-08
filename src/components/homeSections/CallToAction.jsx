@@ -10,7 +10,7 @@ const CallToAction = () => {
   return (
     <div
       className="relative bg-blue-50 min-h-[70vh] text-center flex flex-col justify-center py-16 lg:py-24"
-      style={{ background: `url('${bgimg.src}')` }}
+      style={{ background: `url('${bgimg.src||null}')` }}
     >
       {/* Background graphic */}
 

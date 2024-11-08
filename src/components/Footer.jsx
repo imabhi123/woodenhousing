@@ -58,7 +58,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-[#4B325A] text-white flex items-center justify-center flex-col">
+    <footer className="bg-[#4B325A] relative z-10 text-white flex items-center justify-center flex-col">
       <div className="max-w-[1000px] p-5">
         <div className="grid container grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-8">
           {menuSections.map((section) => (

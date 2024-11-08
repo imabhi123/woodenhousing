@@ -12,7 +12,7 @@ const TechnologySection = () => {
     <div
       className="w-full h-auto bg-cover bg-no-repeat relative flex flex-col p-8"
       style={{
-        backgroundImage: `url(${img2.src})`,
+        backgroundImage: `url(${img2.src||null})`,
       }}
     >
       <HeadingText

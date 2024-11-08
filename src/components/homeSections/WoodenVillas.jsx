@@ -2,11 +2,12 @@
 import React from "react";
 import { ChevronRight } from "lucide-react";
 import HeadingText from "../HeadingText";
+import Image from "next/image";
 
 const VillaCard = ({ imageUrl, title }) => (
   <div className="min-w-[280px] max-w-[280px] mr-4">
     <div className="relative rounded-lg overflow-hidden shadow-md hover:shadow-lg transition-shadow">
-      <img
+      <img height={500} width={500}
         src={imageUrl}
         alt={"Wooden Villa"}
         className="w-full h-[200px] object-cover"
@@ -71,7 +72,7 @@ const WoodenVillasShowcase = () => {
   };
 
   return (
-    <div className="max-w-[1000px] mx-auto px-4 py-8 ">
+    <div className="max-w-[1200px] mx-auto px-4 py-8 ">
       <HeadingText
         title="Series"
         text="A series of wooden houses designed with direct-angle views, allowing you to see the construction details of your home from every perspective."

@@ -2,13 +2,14 @@
 import React from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import HeadingText from "../HeadingText";
+import Image from "next/image";
 
 const ServicesCard = ({ title, description, imageSrc, className = "" }) => (
   <div
     className={`flex flex-col bg-white rounded-lg shadow-md overflow-hidden ${className}`}
   >
     <div className="relative h-48">
-      <img src={imageSrc} alt={title} className="w-full h-full object-cover" />
+      <img height={500} width={500} src={imageSrc||null} alt={title} className="w-full h-full object-cover" />
     </div>
     <div className="p-4 flex flex-col items-center">
       <h3 className="text-lg font-semibold mb-2">{title}</h3>
@@ -62,7 +63,7 @@ const ServicesSection = () => {
   };
 
   return (
-    <div className="w-full mx-auto px-4 py-12 bg-[#F6F3F6]">
+    <div className="w-full px-4 py-12 mx-auto bg-[#F6F3F6]">
       <HeadingText title="Services" />
       <div className="text-center mb-12 mx-auto flex flex-col  max-w-[800px]">
         <p className="text-[#454545] font-oregano mb-2 text-[20px]">

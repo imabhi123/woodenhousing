@@ -81,7 +81,7 @@ const HeadingText = ({
         <p
           className={`font-lexend ${
             white ? "text-[#FFFFFF]" : "text-[#352E39]"
-          } p-0 m-0 text-[16px] sm:text-[24px] font-bold`}
+          } p-0 m-0 text-[16px] min-w-fit sm:text-[24px] font-bold`}
         >
           {title} {title1 && <span className="text-[#D75337]">{title1}</span>}
         </p>
